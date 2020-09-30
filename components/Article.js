@@ -123,7 +123,7 @@ const testArticle = {
 }
 
 data.push(testArticle)
-console.log(data)
+//console.log(data)
 
  function articleMaker(obj) {
      const news = document.querySelector('.articles')
@@ -149,6 +149,8 @@ console.log(data)
     para3.textContent= obj.thirdParagraph
 
     button.textContent= 'expand'
+    button.style.marginLeft ='17rem', button.style.backgroundColor = "grey", button.style.color = 'white', button.style.fontSize = "1rem", button.style.borderRadius = "20px", button.style.padding = '.5rem'
+
 
     button.addEventListener('click', ()=>{
       container.classList.toggle('article-open')
@@ -158,13 +160,11 @@ console.log(data)
     return container
   }
 
-document.querySelector('.articles').append(articleMaker(data[4]))
 
-data.forEach(objContainer =>{
-  const container = document.createElement('div')
-  const nextArticle = articleMaker(objContainer.title, objContainer.date, objContainer.firstParagraph)
-  container.appendChild(nextArticle)
-  console.log(nextArticle)
+const parent =document.querySelector('.articles')
+data.forEach((objContainer) =>{
+parent.append(articleMaker(objContainer))
+ // console.log(nextArticle)
 })
 
 
